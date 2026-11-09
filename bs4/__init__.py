@@ -809,7 +809,7 @@ class BeautifulSoup(Tag):
             self.currentTag = self.tagStack[-1]
 
         if self.replacer is not None:
-            tag.name = self.replacer.replace_name(tag.name)
+            self.replacer.apply(tag)
             
         return self.currentTag
 
